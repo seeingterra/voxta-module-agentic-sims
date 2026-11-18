@@ -64,3 +64,49 @@ The Sims 4 and a compatible Voxta server on Windows x64. Tool-capable text gener
 is required; voice services are optional. Experimental pre-release: separate test
 save only. Some app features are time-limited previews; no extra payment or API key
 is required by this adapter. Not affiliated with EA or endorsed by Voxta.
+
+## Review packet for the Voxta team
+
+| | |
+|---|---|
+| Repository | https://github.com/seeingterra/voxta-module-agentic-sims (public, MIT) |
+| Module id | `Voxta.Modules.AgenticSims` (category **Games**, `win-x64`) |
+| Test release | [`v0.1.0-preview.6`](https://github.com/seeingterra/voxta-module-agentic-sims/releases/tag/v0.1.0-preview.6) (pre-release), built by `voxta-module-actions` `release.yml@v1`, GitHub-attested |
+| Package | `Voxta.Modules.AgenticSims-0.1.0-preview.6-any.zip`, SHA-256 `fece09c39f82aa53b5e7217f56fa99dff12f29a2a76010978cbdd41410b483f9` |
+| Built against | `Voxta.Sdk.Modules 1.13.0-beta.1`, .NET SDK 11.0.100; manifest range `>=1.13.0-beta.1` |
+| Repository protection | Rulesets: default branch (no deletion/force push); tags `v*`, `*/v*` (no deletion/update) |
+| Publishing | `VOXTA_PUBLISH` unset until Voxta trusts the repository |
+| Install button | `https://portal.voxta.ai/modules/install?repo=seeingterra/voxta-module-agentic-sims` |
+| Product | Agentic Sims, a free Sims 4 mod and companion app: https://seeingterra.github.io/agentic-sims/ |
+| Privacy / terms | https://seeingterra.github.io/agentic-sims/privacy.html · https://seeingterra.github.io/agentic-sims/terms.html |
+| Contact | GitHub issues on this repository |
+
+**What the module registers**
+
+- A chat augmentation `agentic_sims.native` (opt-in, not in catch-all, admin-installable, account-bound to one Voxta
+  user). Context: the Sims the player shared in Agentic Sims (mood, needs, relationships, activity). Tools: status,
+  inspect, interactions, receipt (read); request_action and command (write, `Act` permission, off unless the module's
+  "Offer action requests" switch is on).
+- A launcher (`ILauncher`) for the Play page: shows whether The Sims 4 / Agentic Sims are running; Launch opens the
+  Agentic Sims dashboard of the configured installation, or the fixed download page when it isn't installed.
+
+**Dependencies and data flow**
+
+- Talks only to the Agentic Sims companion on `http://127.0.0.1:<port>/api/remote/bridge` (fixed loopback, no proxy,
+  no redirects, 12 s timeout, 64 KB responses). The access key is read from the player's local `remote-bridge.json`
+  on every call and never placed in prompts, tool results, settings or logs.
+- No network access besides loopback; no game files, saves, AI keys or Patreon data are read or sent.
+- Game actions are always decided by Agentic Sims' own local permissions and approval screen.
+- Requires the separate Agentic Sims app and the player's own copy of The Sims 4 (Windows). Not affiliated with EA.
+
+**Test evidence (0.1.0-preview.3–6, Voxta 1.13.0 on Windows 11)**
+
+- Installed through Voxta's zip install; module listed and configurable; settings persist across updates.
+- Play page card loads (after switching to `IUnitOfWorkFactory`), shows status, and Launch opens the Agentic Sims
+  dashboard; with no Agentic Sims at the configured folder it opens the download page.
+- 26 automated checks (`tests/`) in CI on every push and release.
+- Still to be done live before leaving preview: the full chat checklist above (tools in a private chat, revoked key,
+  stale scene, proposal with receipt, second-account isolation).
+
+**Voxta Hub**: Hub publishing (`.voxpak`) covers characters, scenarios and collections, not modules. The module
+is distributed through this repository (Module Registries / install button) and, once trusted, Voxta's module source.
