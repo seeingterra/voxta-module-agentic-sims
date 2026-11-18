@@ -1,6 +1,6 @@
 {
   "id": "Voxta.Modules.AgenticSims",
-  "version": "0.1.0-preview.6",
+  "version": "0.1.0",
   "author": "seeingterra",
   "voxta": ">=1.13.0-beta.1",
   "label": "Agentic Sims",

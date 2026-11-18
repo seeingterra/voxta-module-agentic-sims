@@ -71,7 +71,7 @@ is required by this adapter. Not affiliated with EA or endorsed by Voxta.
 |---|---|
 | Repository | https://github.com/seeingterra/voxta-module-agentic-sims (public, MIT) |
 | Module id | `Voxta.Modules.AgenticSims` (category **Games**, `win-x64`) |
-| Test release | [`v0.1.0-preview.6`](https://github.com/seeingterra/voxta-module-agentic-sims/releases/tag/v0.1.0-preview.6) (pre-release), built by `voxta-module-actions` `release.yml@v1`, GitHub-attested |
+| Release | [`v0.1.0`](https://github.com/seeingterra/voxta-module-agentic-sims/releases/tag/v0.1.0) (module flagged Experimental; earlier test: v0.1.0-preview.6), built by `voxta-module-actions` `release.yml@v1`, GitHub-attested |
 | Package | `Voxta.Modules.AgenticSims-0.1.0-preview.6-any.zip`, SHA-256 `fece09c39f82aa53b5e7217f56fa99dff12f29a2a76010978cbdd41410b483f9` |
 | Built against | `Voxta.Sdk.Modules 1.13.0-beta.1`, .NET SDK 11.0.100; manifest range `>=1.13.0-beta.1` |
 | Repository protection | Rulesets: default branch (no deletion/force push); tags `v*`, `*/v*` (no deletion/update) |
