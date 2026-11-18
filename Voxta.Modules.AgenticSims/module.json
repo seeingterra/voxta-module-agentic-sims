@@ -1,0 +1,10 @@
+{
+  "id": "Voxta.Modules.AgenticSims",
+  "version": "0.1.0-preview.5",
+  "author": "seeingterra",
+  "voxta": ">=1.13.0-beta.1",
+  "label": "Agentic Sims",
+  "category": "Games",
+  "platforms": ["win-x64"],
+  "description": "Bring player-shared Sims, their needs and activities into Voxta chats. Propose game interactions through Agentic Sims with local permissions and receipts. Requires the separate Agentic Sims companion and The Sims 4. Experimental test build."
+}

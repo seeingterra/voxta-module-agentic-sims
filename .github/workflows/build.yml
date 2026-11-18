@@ -1,0 +1,23 @@
+name: build
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions: {}
+jobs:
+  checks:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet restore tests/ModuleChecks.csproj --locked-mode
+      - run: dotnet run --project tests -c Release --no-restore
+  build:
+    needs: checks
+    uses: voxta-ai/voxta-module-actions/.github/workflows/build.yml@v1
+    permissions:
+      contents: read

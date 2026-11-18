@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net11.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Voxta.Modules.AgenticSims/Voxta.Modules.AgenticSims.csproj" />
+    <PackageReference Include="Voxta.Sdk.Modules" Version="1.13.0-beta.1" />
+  </ItemGroup>
+</Project>
