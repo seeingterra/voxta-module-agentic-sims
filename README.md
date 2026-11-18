@@ -1,6 +1,6 @@
 # Agentic Sims for Voxta
 
-**Experimental test module · 0.1.0-preview.5. Use a separate test save.**
+**Experimental test module · 0.1.0-preview.6. Use a separate test save.**
 
 [![Install in Voxta](.github/install-in-voxta.svg)](https://portal.voxta.ai/modules/install?repo=seeingterra/voxta-module-agentic-sims)
 

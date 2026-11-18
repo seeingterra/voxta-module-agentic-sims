@@ -1,10 +1,12 @@
 {
   "id": "Voxta.Modules.AgenticSims",
-  "version": "0.1.0-preview.5",
+  "version": "0.1.0-preview.6",
   "author": "seeingterra",
   "voxta": ">=1.13.0-beta.1",
   "label": "Agentic Sims",
   "category": "Games",
-  "platforms": ["win-x64"],
-  "description": "Bring player-shared Sims, their needs and activities into Voxta chats. Propose game interactions through Agentic Sims with local permissions and receipts. Requires the separate Agentic Sims companion and The Sims 4. Experimental test build."
+  "platforms": [
+    "win-x64"
+  ],
+  "description": "Talk with your Sims from The Sims 4 in Voxta. Agentic Sims is a free mod and companion app that lets you chat with your Sims in real time, in the game. This module brings the Sims you choose into your Voxta chats too: ask how they're doing (mood, needs, relationships, what they're up to) and suggest what they do next, which you approve in Agentic Sims. Adds a Play card that opens Agentic Sims. Requires the Agentic Sims app (free download) and The Sims 4 on this Windows PC. Experimental: use a spare save."
 }

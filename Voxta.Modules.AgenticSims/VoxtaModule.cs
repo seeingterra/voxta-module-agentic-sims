@@ -9,7 +9,7 @@ public class VoxtaModule : IVoxtaModule
     public const string ContextKey = "agentic_sims.native";
     public const string AugmentationKey = "agentic_sims.native";
     public static readonly AugmentationKeyDescriptor[] Augmentations =
-        [new(AugmentationKey, "Agentic Sims", "Player-shared Sims, needs and activities with locally controlled action requests.")];
+        [new(AugmentationKey, "Agentic Sims", "Your Sims from The Sims 4 in this chat: their mood, needs, relationships and what they're doing, plus suggestions you approve in Agentic Sims.")];
 
     public void Configure(IVoxtaModuleBuilder builder)
     {
@@ -20,7 +20,7 @@ public class VoxtaModule : IVoxtaModule
             InstallableBy = ModuleInstallableBy.AdminsOnly,
             Supports = new() { ChatAugmentations = new(ServiceDefinitionCategoryScore.High), Launcher = new(ServiceDefinitionCategoryScore.High) },
             Pricing = ServiceDefinitionPricing.Free, Hosting = ServiceDefinitionHosting.Builtin,
-            Notes = "Requires Agentic Sims on this Windows computer. Opt-in, account-bound access; local grants control all game actions. Unstable test build: use a separate test save.",
+            Notes = "How it works: Agentic Sims (a free app and Sims 4 mod) runs next to the game. In its Remote Sims page you pick which Sims Voxta may see. Add \"Agentic Sims\" to a private chat in Voxta to ask about those Sims and suggest actions; nothing happens in your game unless you allow it in Agentic Sims. Only your Voxta account can use your game. Experimental test build: play on a spare save.",
             HelpLink = "https://seeingterra.github.io/agentic-sims/",
             Augmentations = Augmentations,
             Logo = ModuleLogo.EmbeddedResource(typeof(VoxtaModule), "Assets.logo.svg"),

@@ -10,7 +10,7 @@ public class AgenticSimsService(ILogger<AgenticSimsService> logger) : ServiceBas
         Task.FromResult<AugmentationPlanItem[]>([new()
         {
             Key = VoxtaModule.AugmentationKey, Label = "Agentic Sims",
-            Description = "Connect only this account's explicitly shared Sims. No background conversations or automatic game actions.",
+            Description = "Brings the Sims you shared in Agentic Sims (Remote Sims) into this chat. Ask how they're doing or what they could do next; game actions only happen when you allow them in Agentic Sims.",
             Activation = AugmentationActivation.OptIn, IncludeInCatchAll = false, Suggested = false,
             Tools = ToolCatalog.Specs.Select(s => new AugmentationToolDeclaration(s.Name, VoxtaModule.ContextKey)).ToArray(),
             ActivateAsync = async (session, ct) =>
